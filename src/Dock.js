@@ -331,7 +331,7 @@ export default class Dock extends Component {
         <div style={dockStyles}>
           <div style={resizerStyles}
                onMouseDown={this.handleMouseDown} />
-          <div style={styles.dockContent} id="dockContent>
+          <div style={styles.dockContent} id="dockContent" name="dockContent">
             {typeof children === 'function' ?
               children({
                 position,
