@@ -259,13 +259,13 @@ export default class Dock extends Component {
     }
   }
 
-  componentWillUnmount() {
+  UNSAFE_componentWillUnmount() {
     window.removeEventListener('mouseup', this.handleMouseUp);
     window.removeEventListener('mousemove', this.handleMouseMove);
     window.removeEventListener('resize', this.handleResize);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const isControlled = typeof nextProps.size !== 'undefined';
 
     this.setState({ isControlled });
@@ -331,7 +331,7 @@ export default class Dock extends Component {
         <div style={dockStyles}>
           <div style={resizerStyles}
                onMouseDown={this.handleMouseDown} />
-          <div style={styles.dockContent}>
+          <div style={styles.dockContent} id="dockContent>
             {typeof children === 'function' ?
               children({
                 position,
